@@ -20,13 +20,14 @@ body {
 #main {
     height: 500px;
     width: 65%;
-    background-image: url("/pexels-dreamypixel-547119.jpg");
+    /* background-image: url("/pexels-dreamypixel-547119.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     overflow: hidden;
+    /* display: none; */
 }
 
 
@@ -78,7 +79,7 @@ body {
 /* CATEGORY */
 #category {
     border: 2px solid white;
-    width: 30%;
+    width: 35%;
     border-radius: 10px;
     text-align: center;
     letter-spacing: 1px;
@@ -88,6 +89,7 @@ body {
     cursor: pointer;
     transition: 0.3s;
     user-select: none; /* text select nahi hoga */
+    animation: moveX 2s infinite ease-in-out;
 }
 
 #category:hover {
@@ -96,19 +98,13 @@ body {
     transform: scale(1.05);
 }
 
-/* CATEGORY BOX */
-/* #caregory_box {
-    border: 2px solid white;
-    width: 55%;
-    display: flex;
-    height: 230px;
-    border-radius: 10px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.8rem;
-    background-color: white;
-} */
+@keyframes moveX {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(10px); } /* kitna move karna hai right */
+    100% { transform: translateX(0); }
+}
+
+
 
 .category_type {
     border: 2px solid black;
@@ -120,6 +116,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     user-select: none; /* text select nahi hoga */
+    margin: 5px;
 }
 
 .category_type:hover {
@@ -138,20 +135,70 @@ body {
     height: 60px;
     margin: 30px auto;
     border-radius: 10px;
-    color: white;
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 2px;
-    padding: 5.5px;
     cursor: pointer;
     transition: 0.3s ease;
     user-select: none; /* text select nahi hoga */
+    animation: moveY 2s infinite ease-in-out;
+    padding: 5.5px;
+}
+
+@keyframes moveY {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(10px); } /* kitna move karna hai right */
+    100% { transform: translateY(0); }
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+
+a h3 {
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    padding: 5.5px;
+
 }
 
 #start_button_div:hover {
+    transform: scale(1.03);
     background-color: yellow;
-    color: black;
     border: 2px solid yellow;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px yellow;
+}
+
+#start_button_div h3:hover {
+    color: black;
+}
+
+
+#main_2 {
+    height: 500px;
+    width: 65%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    overflow: hidden;
+    display: none;
+    margin: 50px auto;
+    border: 2px solid white;
+}
+
+
+.showing_category {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    top: -70px;
+    letter-spacing: 2px;
+}
+
+#you_have_Selected {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 20px 0px 20px;
 }
